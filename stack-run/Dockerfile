@@ -8,8 +8,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y --no-install-recommends  \
       ca-certificates \
       curl \
-      libicu \
-      libpq \
+      libicu-dev \
+      libpq-dev \
       locales \
       msmtp-mta \
       netbase  \
