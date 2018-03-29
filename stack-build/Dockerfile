@@ -1,10 +1,9 @@
 # @IMAGE stack-build
-# @VERSION 2018-01-29-01
+# @VERSION 2018-03-29-01
 
 FROM ubuntu:latest
 
-RUN echo "dependencies v1" && \
-    export DEBIAN_FRONTEND=noninteractive && \
+RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
             curl \
@@ -35,10 +34,9 @@ RUN echo "dependencies v1" && \
       stack \
       xz-utils \
         && \
+    rm -rf /var/lib/apt/lists/* && \
     localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 && \
     stack upgrade && \
     cp -f /root/.local/bin/stack /usr/bin/stack
-
-
 
 ENV LANG=en_US.UTF-8
