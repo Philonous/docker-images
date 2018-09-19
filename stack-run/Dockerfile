@@ -6,6 +6,7 @@ FROM ubuntu:latest
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
     apt-get install -y --no-install-recommends  \
+      build-essential \
       ca-certificates \
       curl \
       libicu-dev \
